@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пекарня Ессении</title>
+    <!--подключение файла стилей css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--здесь можно писать вместо модуля style.css-->
+    <style>
+    </style>
+</head>
+<html>
+<body>
+<div class="topnav">
+    <a href="/home">Главная</a>
+    <a class="contact" href="/basket">Корзина</a>
+    <a class="contact" href="/home#bottom">Доставка</a>
+    <a class="contact" href="/home#bottom">Контакты</a>
+    <a class="contact" href="">Избранное</a>
+</div>
+<ul class="products clearfix">
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn1" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button1 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button1>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal1" class="modal">
+            <span class="close">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides1(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides1(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides1">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides1">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides1">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+        <!-- Боковая панель *купить в 1 клик* -->
+        <div id="mySidenav" class="sidenav">
+            <span class="closebtn" onclick="closeNav()">×</span>
+            <a href="/basket">Посмотреть корзину</a>
+            <a href="#">Оформить заказ</a>
+            <a href="#" onclick="closeNav()">Продолжить покупки</a>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn2" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button2 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button2>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal2" class="modal">
+            <span class="close" onclick="document.getElementById('myModal2').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides2(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides2(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides2">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides2">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides2">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn3" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button3 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button3>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal3" class="modal">
+            <span class="close" onclick="document.getElementById('myModal3').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides3(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides3(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides3">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides3">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides3">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn4" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button4 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button4>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal4" class="modal">
+            <span class="close" onclick="document.getElementById('myModal4').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides4(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides4(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides4">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides4">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides4">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn5" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button5 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button5>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal5" class="modal">
+            <span class="close" onclick="document.getElementById('myModal5').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides5(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides5(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides5">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides5">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides5">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn6" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button6 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button6>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal6" class="modal">
+            <span class="close" onclick="document.getElementById('myModal6').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides6(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides6(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides6">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides6">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides6">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn7" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button7 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button7>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal7" class="modal">
+            <span class="close" onclick="document.getElementById('myModal7').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides7(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides7(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides7">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides7">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides7">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+    <li class="product-wrapper">
+        <a class="product">
+            <div class="product-photo">
+                <img src="{{ url_for('static', filename='images/pirogi.jpg') }}" alt="">
+                <h3>Торты</h3>
+                <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
+                    Прийдя в гости не с пустыми руками уже хорошо</p>
+                <i class="fas"></i>
+                <h5>В наличии</h5>
+                <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                <div class="buttons">
+                    <button id="myBtn8" class="product-preview">Быстрый просмотр</button>
+                    <button class="product-buttons-wrap" onclick="openNav()">
+                        <img src="{{ url_for('static', filename='images/basket.svg') }}">В корзину</button>
+                    <button class="product-buttons-wrap1">Купить в 1 клик</button>
+                    <button8 class="like">
+                        <img src="{{ url_for('static', filename='images/like.svg') }}"></button8>
+                </div>
+            </div>
+        </a>
+        <!-- The Modal -->
+        <div id="myModal8" class="modal">
+            <span class="close" onclick="document.getElementById('myModal8').style.display='none'">×</span>
+            <!-- Next and previous buttons -->
+            <span class="prev" onclick="plusSlides8(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides8(1)">&#10095;</span>
+            <!-- Слайд изображений -->
+            <div class="mySlides8">
+                <div class="numbertext">1 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides8">
+                <div class="numbertext">2 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+            <div class="mySlides8">
+                <div class="numbertext">3 / 3</div>
+                <img class="modal-content" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
+            </div>
+        </div>
+    </li>
+</ul>
+<!-- подключение файла с js -->
+<script src="{{ url_for('static', filename='js/tort.js') }}"></script>
+</body>
+</html>
