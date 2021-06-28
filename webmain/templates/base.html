@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Пекарня Ессении{% endblock %}</title>
     <!-- подключение файла стилей css-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/maffiny.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- здесь можно писать вместо модуля style.css -->
     <style>
     </style>
 </head>
 <body>
-
+    {% block content %}{% endblock %}
 </body>
 </html>
 

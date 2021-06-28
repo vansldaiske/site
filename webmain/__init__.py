@@ -20,7 +20,7 @@ def create_app():
 
     @app.route("/products")
     def torts():
-        return render_template("torts.html")
+        return render_template("products.html")
 
     @app.route("/basket")
     def basket():
