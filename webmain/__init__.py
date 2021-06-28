@@ -18,21 +18,9 @@ def create_app():
 
         return render_template("main.html", page_title=title)
 
-    @app.route("/torts")
+    @app.route("/products")
     def torts():
         return render_template("torts.html")
-
-    @app.route("/maffiny")
-    def maffiny():
-        return render_template("maffiny.html")
-
-    @app.route("/pirogi")
-    def pirogi():
-        return render_template("pirogi.html")
-
-    @app.route("/merenge")
-    def merenge():
-        return render_template("merenge.html")
 
     @app.route("/basket")
     def basket():
