@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+<div class="topnav">
+    <a href="/home">Главная</a>
+    <a class="contact" href="/basket">Корзина</a>
+    <a class="contact" href="/home#bottom">Доставка</a>
+    <a class="contact" href="/home#bottom">Контакты</a>
+    <a class="contact" href="">Избранное</a>
+</div>
     {% block content %} {% endblock %}
     <script src="{{ url_for('static', filename='js/tort.js') }}"></script>
 </body>

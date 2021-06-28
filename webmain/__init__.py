@@ -19,8 +19,29 @@ def create_app():
         return render_template("main.html", page_title=title)
 
     @app.route("/products")
-    def torts():
-        return render_template("products.html")
+    def products():
+        return render_template("products.html", products=[
+            {
+                "name": "Торт",
+                "price": "330р.",
+                "category": "torts"
+            },
+            {
+                "name": "Маффины",
+                "price": 330,
+                "category": "maffiny"
+            },
+            {
+                "name": "Пироги",
+                "price": 330,
+                "category": "pirogi"
+            },
+            {
+                "name": "Меренге",
+                "price": 330,
+                "category": "merenge"
+            }
+        ])
 
     @app.route("/basket")
     def basket():
