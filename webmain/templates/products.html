@@ -6,12 +6,11 @@
             <a class="product">
                 <div class="product-photo">
                     <img src="{{ url_for('static', filename='images/torts.jpg') }}" alt="">
-                    <h3>Торты</h3>
-                    <p class="product-text">Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.
-                        Прийдя в гости не с пустыми руками уже хорошо</p>
+                    <h3>{{ product.name }}</h3>
+                    <p class="product-text">{{ product.description }}</p>
                     <i class="fas"></i>
                     <h5>В наличии</h5>
-                    <h4 class="price-new"><b class="price-old">500 руб.</b> 300 руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                    <h4 class="price-new"><b class="price-old">500 руб.</b> {{ product.price }}руб. </h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
                     <div class="buttons">
                         <button id="myBtn1" class="product-preview">Быстрый просмотр</button>
                         <button class="product-buttons-wrap" onclick="openNav()">
