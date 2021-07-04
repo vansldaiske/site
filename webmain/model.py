@@ -1,13 +1,13 @@
-from flask_sqlalchemy import SQLAlchemy
+import sqlalchemy as sa
+from webmain.database import Base
 
-db = SQLAlchemy()
-
-class Products(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, nullable=False)
-    description = db.Column(db.Text, nullable=True)
-    price = db.Column(db.Integer, nullable=False)
-    category = db.Column(db.Text, nullable=False)
+class Products(Base):
+    __tablename__ = 'Products'
+    id = sa.Column(sa.Integer, primary_key=True)
+    name = sa.Column(sa.String, nullable=False)
+    description = sa.Column(sa.Text, nullable=True)
+    price = sa.Column(sa.Integer, nullable=False)
+    category = sa.Column(sa.Text, nullable=False)
 
     def __repr__(self):
-        return '<Products {} {}>'.format(self.title, self.text)
+        return '<Products {} {}>'.format(self.name, self.description)

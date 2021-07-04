@@ -1,15 +1,15 @@
 # coding=utf-8
 
-from flask import Flask, render_template, url_for
-
-from webmain.model import db
-# from webmain.config import
+from flask import Flask, render_template, url_for, request, Response
+from http import HTTPStatus
+from webmain.database import migrate, Session
+from webmain.model import Products
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
-    db.init_app(app)
+    migrate()
 
     @app.route("/")
     @app.route("/home")
@@ -18,41 +18,18 @@ def create_app():
 
         return render_template("main.html", page_title=title)
 
-    @app.route("/products")
-    def products():
-        return render_template("products.html", products=[
-            {
-                "name": "Торт",
-                "price": 330,
-                "description": "Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене. "
-                               "Прийдя в гости не с пустыми руками уже хорошо",
-                "category": "torts"
-            },
-            {
-                "name": "Маффины",
-                "price": 330,
-                "description": "Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене. "
-                               "Прийдя в гости не с пустыми руками уже хорошо",
-                "category": "maffiny"
-            },
-            {
-                "name": "Пироги",
-                "price": 330,
-                "description": "Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене. "
-                               "Прийдя в гости не с пустыми руками уже хорошо",
-                "category": "pirogi"
-            },
-            {
-                "name": "Меренге",
-                "price": 330,
-                "description": "Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене. "
-                               "Прийдя в гости не с пустыми руками уже хорошо",
-                "category": "merenge"
-            }
-        ])
+    @app.route("/<category>")
+    def products_list(category):
+        conn = Session()
+        products = conn.query(Products).all()
+
+        if category:
+            filtered_products = conn.query(Products).filter_by(category=category)
+            return render_template("products.html", products=filtered_products)
+        return render_template("products.html", products=products)
 
     @app.route("/basket")
     def basket():
-        return render_template("base.html")
+        return render_template("products.html")
 
     return app
