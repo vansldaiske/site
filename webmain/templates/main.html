@@ -12,7 +12,6 @@
     </style>
 </head>
 <body>
-
     <header>    <!-- ШАПКА САЙТА -->
     <div class="header">
         <h1>Пекарня Ессении</h1>
@@ -24,32 +23,17 @@
         <a class="info" href="/home#bottom">Контакты</a>
     </div>
     </header>
-
     <section class="content">
         <div class="rules">
-            <div class="module-card">
-                <img class="near" src="{{ url_for('static', filename='images/torts.jpg') }}">
-                <h3><a href='/torts' target="_blank">Торты</a></h3>
-                <p>Большая разновидность тортов, на любой праздник и торжество</p>
-            </div>
-            <div class="module-card1">
-                <img class="module" src="{{ url_for('static', filename='images/maffiny.jpg') }}">
-                <h3><a href='/maffiny' target="_blank">Маффины</a></h3>
-                <p>Маффины это просто вкусный перекус для любого удобного брейка с кофем</p>
-            </div>
-            <div class="module-card2">
-                <img class="fonts" src="{{ url_for('static', filename='images/pirogi.jpg') }}">
-                <h3><a href='/pirogi' target="_blank">Пироги</a></h3>
-                <p>Выбор пирогов для любого дня когда времени не хватает а хочется чего нибудь вкусного</p>
-            </div>
-            <div class="module-card3">
-                <img class="colors" src="{{ url_for('static', filename='images/merenge.jpg') }}">
-                <h3><a href='/merenge' target="_blank">Меренге</a></h3>
-                <p>Прийдя в гости не с пустыми руками уже хорошо, красивые, вкусные по доступной цене.</p>
-            </div>
+            {% for category in categoryes %}
+                <div class="module-card">
+                    <img class="torts" src="{{ url_for('static', filename=category.link_photo) }}">
+                    <h3><a href={{ category.link_name }} target="_blank">{{ category.name }}</a></h3>
+                    <p>{{ category.description }}</p>
+                </div>
+            {% endfor %}
         </div>
     </section>
-
     <footer>    <!-- Подвал сайта -->
     <div class="footer">
         <h4 class="gorod"><a name="bottom">Москва</a></h4>
@@ -57,6 +41,5 @@
         <h5 class="regim"><a name="bottom">Режим работы: пн-пт 9.00-18.00 | сб-вс 10.00-17.00</a></h5>
     </div>
     </footer>
-
 </body>
 </html>

@@ -3,7 +3,7 @@
 // начальное состояние кнопки — не кликнута
 var isClicked = false;
 // вписываю переменную кнопки в скобки
-var button1 = document.getElementsByTagName('button1')[0];
+var button1 = document.getElementsByTagName('button')[0];
 // при клике по кнопке скрипт начинает работать
 button1.onclick = function() {
   if (isClicked) {
@@ -13,125 +13,6 @@ button1.onclick = function() {
   } else {
     // при нажатии кнопка становится красной в CSS .clicked{}
     button1.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button2 = document.getElementsByTagName('button2')[0];
-// при клике по кнопке скрипт начинает работать
-button2.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button2.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button2.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button3 = document.getElementsByTagName('button3')[0];
-// при клике по кнопке скрипт начинает работать
-button3.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button3.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button3.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button4 = document.getElementsByTagName('button4')[0];
-// при клике по кнопке скрипт начинает работать
-button4.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button4.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button4.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button5 = document.getElementsByTagName('button5')[0];
-// при клике по кнопке скрипт начинает работать
-button5.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button5.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button5.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button6 = document.getElementsByTagName('button6')[0];
-// при клике по кнопке скрипт начинает работать
-button6.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button6.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button6.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button7 = document.getElementsByTagName('button7')[0];
-// при клике по кнопке скрипт начинает работать
-button7.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button7.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button7.classList.add('clicked');
-    isClicked = true;
-  }
-};
-
-// начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button8 = document.getElementsByTagName('button8')[0];
-// при клике по кнопке скрипт начинает работать
-button8.onclick = function() {
-  if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button8.classList = 'like';
-    isClicked = false;
-  } else {
-    // при нажатии кнопка становится красной в CSS .clicked{}
-    button8.classList.add('clicked');
     isClicked = true;
   }
 };

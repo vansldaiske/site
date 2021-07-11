@@ -3,7 +3,7 @@
 from flask import Flask, render_template, url_for, request, Response
 from http import HTTPStatus
 from webmain.database import migrate, Session
-from webmain.model import Products
+from webmain.model import Products, Category
 
 
 def create_app():
@@ -14,9 +14,11 @@ def create_app():
     @app.route("/")
     @app.route("/home")
     def index():
+        conn = Session()
+        categoryes = conn.query(Category).all()
         title = "Пекарня Ессении"
 
-        return render_template("main.html", page_title=title)
+        return render_template("main.html", page_title=title, categoryes=categoryes)
 
     @app.route("/<category>")
     def products_list(category):
