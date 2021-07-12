@@ -3,7 +3,7 @@
 // начальное состояние кнопки — не кликнута
 var isClicked = false;
 // вписываю переменную кнопки в скобки
-var button1 = document.getElementsByTagName('button')[0];
+var button1 = document.getElementsByTagName('button1')[0];
 // при клике по кнопке скрипт начинает работать
 button1.onclick = function() {
   if (isClicked) {
@@ -13,6 +13,25 @@ button1.onclick = function() {
   } else {
     // при нажатии кнопка становится красной в CSS .clicked{}
     button1.classList.add('clicked');
+    isClicked = true;
+  }
+};
+//Конец кнопок LIKE
+
+// Кнопки LIKE
+// начальное состояние кнопки — не кликнута
+var isClicked = false;
+// вписываю переменную кнопки в скобки
+var button2 = document.getElementsByTagName('button2')[1];
+// при клике по кнопке скрипт начинает работать
+button2.onclick = function() {
+  if (isClicked) {
+    // при нажатии кнопка становится белой в CSS .clicked1{}
+    button2.classList = 'like';
+    isClicked = false;
+  } else {
+    // при нажатии кнопка становится красной в CSS .clicked{}
+    button2.classList.add('clicked');
     isClicked = true;
   }
 };

@@ -1,4 +1,5 @@
 import sqlalchemy as sa
+from sqlalchemy.orm import relationship
 from webmain.database import Base
 
 class Products(Base):
@@ -11,6 +12,7 @@ class Products(Base):
     link_photo = sa.Column(sa.String, nullable=False)
     link_like = sa.Column(sa.String, nullable=False)
     link_basket = sa.Column(sa.String, nullable=False)
+    categoryes = relationship("Category", back_populate="products")
 
     def __repr__(self):
         return '<Products {} {} {}>'.format(self.name, self.description, self.link_photo)
@@ -22,6 +24,7 @@ class Category(Base):
     description = sa.Column(sa.Text, nullable=True)
     link_name = sa.Column(sa.Text, nullable=True)
     link_photo = sa.Column(sa.String, nullable=False)
+    products = relationship("Products", back_populates="categoryes")
 
     def __repr__(self):
         return '<Category {} {} {}>'.format(self.name, self.description, self.link_photo)
