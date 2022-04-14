@@ -5,26 +5,32 @@ from http import HTTPStatus
 from webmain.database import migrate, Session
 from webmain.model import Products, Category
 
-products_api_bp = Blueprint('products_api', __name__, url_prefix='/products')
+blueprint = Blueprint('products_api', __name__)
 
-@products_api_bp("/", "/home", "/<category>", "/basket")
-def products_api(index, products_list, basket):
+@blueprint.route("/")
+@blueprint.route("/home")
+def index():
+    conn = Session()
+    categoryes = conn.query(Category).all()
+    title = "Пекарня Ессении"
+    icon = 'images/maffiny.jpg' #no work
 
-    def index():
-        conn = Session()
-        categoryes = conn.query(Category).all()
-        title = "Пекарня Ессении"
+    return render_template("main.html", page_title=title, categoryes=categoryes, page_icon=icon)
 
-        return render_template("main.html", page_title=title, categoryes=categoryes)
+@blueprint.route("/<category>")
+def products_list(category):
+    conn = Session()
+    products = conn.query(Products).all()
 
-    def products_list(category):
-        conn = Session()
-        products = conn.query(Products).all()
+    if category:
+        filtered_products = conn.query(Products).filter(Products.category.has(link_name=category))
+        return render_template("products.html", products=filtered_products)
+    return render_template("products.html", products=products)
 
-        if category:
-            filtered_products = conn.query(Products).filter_by(category=category)
-            return render_template("products.html", products=filtered_products)
-        return render_template("products.html", products=products)
+# @blueprint.route("/basket")
+# def basket():
+#     return render_template("products.html")
 
-    def basket():
-        return render_template("products.html")
+# @blueprint.errorhandler(404)
+# def page_not_found(error):
+#     return render_template("404.html"), 404

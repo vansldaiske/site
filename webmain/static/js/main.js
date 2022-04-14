@@ -6,7 +6,7 @@ var pageSettings = {
   red: 200,
   green: 200,
   blue: 200,
-  background: ['../site/pekar.jpg', '../site/pekar1.jpg', '../site/pekar2.jpg']
+  background: []
 };
 
 var bgColor = 'rgb(' + pageSettings.red + ', ' +

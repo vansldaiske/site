@@ -1,5 +1,5 @@
 from webmain.database import Session
-from webmain.products_add import create_product
+# from webmain.products_add import create_product
 from webmain.model import Products, Category
 
 list_products = [
@@ -80,21 +80,7 @@ list_category = [
 
 
 def populate():
-    for product in list_products:
-        new_product = Products(
-            name=product["name"],
-            description=product["description"],
-            price=product["price"],
-            category=product["category"],
-            link_photo=product["link_photo"],
-            link_like=product["link_like"],
-            link_basket=product["link_basket"]
-        )
-
-        conn = Session()
-        conn.add(new_product)
-        conn.commit()
-
+    conn = Session()
     for category in list_category:
         new_category = Category(
             name=category["name"],
@@ -102,14 +88,25 @@ def populate():
             link_name=category["link_name"],
             link_photo=category["link_photo"]
         )
-
-        conn = Session()
         conn.add(new_category)
         conn.commit()
 
+        category_products = [prod for prod in list_products if prod['category'] == new_category.link_name]
+        # print(category_products)
+
+        for product in category_products:
+            new_product = Products(
+                name=product["name"],
+                description=product["description"],
+                price=product["price"],
+                link_photo=product["link_photo"],
+                link_like=product["link_like"],
+                link_basket=product["link_basket"],
+                category=new_category
+            )
+            conn.add(new_product)
+            conn.commit()
 
 
 if __name__ == "__main__":
-
     populate()
-

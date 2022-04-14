@@ -76,7 +76,7 @@ body {
 	text-decoration: none;
 	color: #474747;
 	z-index: 0;
-	height: 500px;
+	height: 515px;
 	/*background-color: #000000*/
 }
 
@@ -330,7 +330,7 @@ body {
     background-color: #FFFFFF;
     color: black;
     font-size: 14px;
-    padding: 9px 9px 0 17px;
+    padding: 26px 9px 0 17px;
     /*border: none;*/
     cursor: pointer;
     border-radius: 20px;
@@ -352,7 +352,7 @@ body {
     /* background-color — для цвета фона */
     background-color: #FF0000;
     /* color — для цвета текста */
-    color: white;
+    /*color: white;*/
 }
 /* конец кнопки */
 

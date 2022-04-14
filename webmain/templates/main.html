@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">
+    <!--<link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">-->
+    <!--<link rel="icon" href="{{ page_icon }}" type="image">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page_title }}</title>
     <!-- подключение файла стилей css-->
@@ -28,7 +29,7 @@
             {% for category in categoryes %}
                 <div class="module-card">
                     <img class="torts" src="{{ url_for('static', filename=category.link_photo) }}">
-                    <h3><a href={{ category.link_name }} target="_blank">{{ category.name }}</a></h3>
+                    <h3><a href="{{ category.link_name }}" target="_blank">{{ category.name }}</a></h3>
                     <p>{{ category.description }}</p>
                 </div>
             {% endfor %}

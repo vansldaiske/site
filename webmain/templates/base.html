@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">
+    <!--<link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Пекарня Ессении{% endblock %}</title>
     <!-- подключение файла стилей css-->
@@ -14,13 +14,13 @@
 <body>
 <div class="topnav">
     <a href="/home">Главная</a>
-    <a class="contact" href="/basket">Корзина</a>
+    <a class="contact" href="/index">Корзина</a>
     <a class="contact" href="/home#bottom">Доставка</a>
     <a class="contact" href="/home#bottom">Контакты</a>
     <a class="contact" href="">Избранное</a>
 </div>
-    {% block content %} {% endblock %}
-    <script src="{{ url_for('static', filename='js/tort.js') }}"></script>
+    <script type=text/javascript src="{{
+  url_for('static', filename='js/.js') }}"></script>
 </body>
 </html>
 

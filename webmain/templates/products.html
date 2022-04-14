@@ -10,19 +10,19 @@
                     <p class="product-text">{{ product.description }}</p>
                     <i class="fas"></i>
                     <h5>В наличии</h5>
-                    <h4 class="price-new"><b class="price-old">500 руб.</b> {{ product.price }}руб. </h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                    <h4 class="price-new"><b class="price-old"></b> {{ product.price }}руб. </h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
                     <div class="buttons">
-                        <button id="myBtn1" class="product-preview">Быстрый просмотр</button>
+                        <button id="myImg" class="product-preview">Быстрый просмотр</button>
                         <button class="product-buttons-wrap" onclick="openNav()">
                             <img src="{{ url_for('static', filename=product.link_basket) }}">В корзину</button>
                         <button class="product-buttons-wrap1">Купить в 1 клик</button>
-                        <button1 class="like">
-                            <img src="{{ url_for('static', filename=product.link_like) }}"></button1>
+                        <button class="like" onclick="doLike(event)">
+                            <img src="{{ url_for('static', filename=product.link_like) }}"></button>
                     </div>
                 </div>
             </a>
             <!-- The Modal -->
-            <div id="myModal1" class="modal">
+            <div id="modal" class="modal">
                 <span class="close">×</span>
                 <!-- Next and previous buttons -->
                 <span class="prev" onclick="plusSlides1(-1)">&#10094;</span>

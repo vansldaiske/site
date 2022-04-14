@@ -17,7 +17,7 @@ def create_product(db: Session, name, description, price, category, link_photo, 
     db.refresh(new_product)
     return new_product
 
-# def get_products(db: Session, category=None):
-#     if category:
-#         return db.query(Products).filter_by(category=category)
-#     return db.query(Products).all()
+def get_products(db: Session, category=None):
+    if category:
+        return db.query(Products).filter_by(category=category)
+    return db.query(Products).all()
