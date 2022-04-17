@@ -1,6 +1,7 @@
 # from sqlalchemy.orm.session import Session
 from webmain.model import Products
-from sqlalchemy.orm import Session
+# from sqlalchemy.orm import Session
+from webmain.database import Session
 
 def create_product(db: Session, name, description, price, category, link_photo, link_like, link_basket):
     new_product = Products(
@@ -13,8 +14,8 @@ def create_product(db: Session, name, description, price, category, link_photo, 
         link_basket=link_basket
     )
     db.add(new_product)
-    db.commit()
     db.refresh(new_product)
+    db.commit()
     return new_product
 
 def get_products(db: Session, category=None):
