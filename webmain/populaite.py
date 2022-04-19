@@ -89,7 +89,7 @@ def populate():
             link_photo=category["link_photo"]
         )
         conn.add(new_category)
-        # conn.commit()
+        conn.commit()
 
         category_products = [prod for prod in list_products if prod['category'] == new_category.link_name]
         print("----", category_products)

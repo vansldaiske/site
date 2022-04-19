@@ -6,18 +6,17 @@
             <a class="product">
                 <div class="product-photo">
                     <img src="{{ url_for('static', filename=product.link_photo) }}" alt="">
+                    <button class="like">
+                            <img id="likes" onclick="myFunction()" src="{{ url_for('static', filename=product.link_like) }}"></button>
                     <h3>{{ product.name }}</h3>
-                    <p class="product-text">{{ product.description }}</p>
-                    <i class="fas"></i>
-                    <h5>В наличии</h5>
-                    <h4 class="price-new"><b class="price-old"></b> {{ product.price }} руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
-                    <div class="buttons">
+                    <p>{{ product.description }}</p>
+                    <i class="fas"></i><h5>В наличии</h5>
+                    <h4 class="price-new"> {{ product.price }} руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
+                    <div>
                         <button id="myBtn" class="product-preview">Быстрый просмотр</button>
                         <button class="product-buttons-wrap" onclick="openNav()">
                             <img src="{{ url_for('static', filename=product.link_basket) }}">В корзину</button>
                         <button class="product-buttons-wrap1">Купить в 1 клик</button>
-                        <likes class="like">
-                            <img src="{{ url_for('static', filename=product.link_like) }}"></likes>
                     </div>
                 </div>
             </a>

@@ -1,14 +1,15 @@
 
 // Кнопки LIKE
 // начальное состояние кнопки — не кликнута
-var isClicked = false;
-// вписываю переменную кнопки в скобки
-var button = document.getElementsByTagName('likes')[0];
+//var isClicked = false;
+// вписываю id тега кнопки в скобки
+var button = document.getElementById('likes');
+//var img = document.querySelectorAll('like');
 // при клике по кнопке скрипт начинает работать
-button.onclick = function() {
+function myFunction() {
   if (isClicked) {
-    // при нажатии кнопка становится белой в CSS .clicked1{}
-    button.classList = 'like';
+    // при нажатии кнопка становится белой
+    button.classList = '';
     isClicked = false;
   } else {
     // при нажатии кнопка становится красной в CSS .clicked{}
@@ -16,6 +17,20 @@ button.onclick = function() {
     isClicked = true;
   }
 };
+
+//var i;
+//var button = document.querySelectorAll('clicked');
+//for (i = 0; i < button.length; i++) {
+//    result[i].button.display = "none";
+//  }
+//
+//document.getElementById("likes").value = result;
+
+//var result = document.querySelectorAll('clicked');
+//var button = document.getElementById('likes');
+//for (var i=0; i < button.length; i++) {
+//    result += "\n  " + button[i].textContent;
+//}
 
 // начальное состояние кнопки — не кликнута
 var isClicked = false;
@@ -165,7 +180,7 @@ window.onclick = function(event) {
 
 //Модальное окно быстрого просмотра 1
 /*var modal = document.getElementById("myModal8");*/
-var modal = document.getElementById("myModal1");
+var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 /*var img = document.getElementById('myImg');*/
@@ -174,7 +189,7 @@ var button = document.getElementById("myBtn1");
 /*var captionText = document.getElementById("caption");*/ //текст на фотографии
 button.onclick = function(){
     modal.style.display = "block";
-//    modalImg.src = this.src;
+    modalImg.src = this.src;
     /*captionText.innerHTML = this.alt;*/
 }
 

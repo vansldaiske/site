@@ -76,7 +76,7 @@ body {
 	text-decoration: none;
 	color: #474747;
 	z-index: 0;
-	height: 515px;
+	height: 500px;
 	/*background-color: #000000*/
 }
 
@@ -109,20 +109,20 @@ body {
 /* конец настройки изображаения */
 
 /* настройка описания товара */
-.product-text {
+.product p {
 	position: relative;
 	margin: 20px;
 	margin-bottom: -90px;
 	font-size: 1em;
 	line-height: 1.4em;
-	height: 5.6em;
+	height: 80px;
 	overflow: hidden;
 	transform: translate(-0.13%, 210%);
 	/*background-color: #000000*/
 }
 
 /* настройка хуйни типо в конце текст начинает изсчезать */
-.product-text:after {
+.product p:after {
 	content: '';
 	display: inline-block;
 	position: absolute;
@@ -137,7 +137,7 @@ body {
 .product h3 {
     position: relative; /* надпись поверх картинки */
 	margin: 20px;
-	transform: translate(-0.13%, 900%);
+	transform: translate(-0.13%, 800%);
 	color: #000000
 }
 
@@ -145,13 +145,13 @@ body {
 .price-new {
     position: relative; /* надпись поверх картинки */
     margin: 20px;
-    transform: translate(-0.100%, 1450%);
+    transform: translate(-0.100%, 1200%);
     color: #000000
 }
 
-.price-old {
-    text-decoration: line-through #ff3535 !important; /* перечеркивает сумму в красный цвет */
-}
+/*.price-old {
+    text-decoration: line-through #ff3535 !important; /* перечеркивает сумму в красный цвет, не работает
+}*/
 /* конец настройки цены товара */
 
 /* настройка галочки */
@@ -159,7 +159,7 @@ body {
   position: relative; /* надпись поверх картинки */
   /*font-size: 2em;*/
   /*padding-left: 70px;*/
-  bottom: -285px;
+  bottom: -240px;
 }
 
 .fas:before {
@@ -181,17 +181,17 @@ body {
     position: relative; /* надпись поверх картинки */
     /*font-size: */
     margin: 20px;
-    transform: translate(10%, 1800%);
+    transform: translate(10%, 1500%);
 }
 /* конец настройки надписи (В наличии) */
 
 /* настройка кнопки (быстрый просмотр) */
 .product-preview {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    -ms-transform: translate(-50%, -50%);
+    /*position: relative;*/
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(25%, -50%);
+    /*-ms-transform: translate(-250%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
@@ -213,10 +213,10 @@ body {
 /* кнопка (в корзину) */
 .product-buttons-wrap {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 590%);
-    -ms-transform: translate(-50%, -50%);
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(38%, 490%);
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
@@ -298,14 +298,14 @@ body {
 /* кнопка купить в 1 клик */
 .product-buttons-wrap1 {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 605%);
-    -ms-transform: translate(-50%, -50%);
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(38%, 505%);
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
-    padding: 10px 36px;
+    padding: 10px 34px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
@@ -322,15 +322,16 @@ body {
 
 /* кнопка like */
 .like {
-    position: relative;
-    top: -210px;
-    left: 80px;
-    /*transform: translate(350%, -900%);*/
-    -ms-transform: translate(-50%, -50%);
+    /*position: relative;*/
+    /*top: -10px;
+    left: 180px;*/
+    /*margin: 150px 5px 15px 20px;*/
+    /*transform: translate(38%, -70%);*/
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #FFFFFF;
-    color: black;
+    /*color: black;
     font-size: 14px;
-    padding: 10px 9px 0 17px;
+    padding: 24px 9px 0 17px;*/
     /*border: none;*/
     cursor: pointer;
     border-radius: 20px;
@@ -338,10 +339,10 @@ body {
 }
 
 .like img {
-    max-width: 100%;
-    max-height: 100%;
-    top: 0;
-    left: 0;
+    max-width: 10%;
+    max-height: 10%;
+    top: 40px;
+    left: 240px;
 }
 
 .like img:hover {
