@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from flask import Blueprint, Flask, render_template, url_for, request, Response
+from flask import Blueprint, Flask, render_template, url_for, request, Response, abort
 from http import HTTPStatus
 from webmain.database import migrate, Session
 from webmain.model import Products, Category
@@ -27,10 +27,21 @@ def products_list(category):
         return render_template("products.html", products=filtered_products)
     return render_template("products.html", products=products)
 
+@blueprint.route("/contact")
+def contact():
+    return render_template("")
+
+
 # @blueprint.route("/basket")
 # def basket():
 #     return render_template("products.html")
 
-# @blueprint.errorhandler(404)
-# def page_not_found(error):
-#     return render_template("404.html"), 404
+# @blueprint.errorhandler(500)
+# def page_not_found(e):
+#     # if a request is in our blog URL space
+#     if request.path.startswith('/contact/'):
+#         # we return a custom blog 404 page
+#         return render_template("contact/500.html"), 500
+#     else:
+#         # otherwise we return our generic site-wide 404 page
+#         return render_template("500.html"), 500

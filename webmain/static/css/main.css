@@ -2,11 +2,17 @@
 /* margin: вверх право низ лево */
 body {
     background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
+    background-blend-mode: multiply;
     margin: 10px;
 }
 
 /* верхняя часть сайта */
+
+.errors500 {
+    /*background: linear-gradient #989898;*/
+    /*background-blend-mode: multiply;*/
+    margin: 350px;
+}
 
 /* Верхняя часть панели с иконками */
 .topnav {
