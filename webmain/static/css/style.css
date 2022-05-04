@@ -1,5 +1,7 @@
 body {
-    /*background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);*/
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply;
+    margin: 10px;
 }
 
 /* Верхняя часть панели с иконками */
@@ -109,20 +111,20 @@ body {
 /* конец настройки изображаения */
 
 /* настройка описания товара */
-.product-text {
+.product p {
 	position: relative;
 	margin: 20px;
 	margin-bottom: -90px;
 	font-size: 1em;
 	line-height: 1.4em;
-	height: 5.6em;
+	height: 80px;
 	overflow: hidden;
 	transform: translate(-0.13%, 210%);
 	/*background-color: #000000*/
 }
 
 /* настройка хуйни типо в конце текст начинает изсчезать */
-.product-text:after {
+.product p:after {
 	content: '';
 	display: inline-block;
 	position: absolute;
@@ -137,7 +139,7 @@ body {
 .product h3 {
     position: relative; /* надпись поверх картинки */
 	margin: 20px;
-	transform: translate(-0.13%, 900%);
+	transform: translate(-0.13%, 800%);
 	color: #000000
 }
 
@@ -145,13 +147,13 @@ body {
 .price-new {
     position: relative; /* надпись поверх картинки */
     margin: 20px;
-    transform: translate(-0.100%, 1450%);
+    transform: translate(-0.100%, 1250%);
     color: #000000
 }
 
-.price-old {
-    text-decoration: line-through #ff3535 !important; /* перечеркивает сумму в красный цвет */
-}
+/*.price-old {
+    text-decoration: line-through #ff3535 !important; /* перечеркивает сумму в красный цвет, не работает
+}*/
 /* конец настройки цены товара */
 
 /* настройка галочки */
@@ -159,7 +161,7 @@ body {
   position: relative; /* надпись поверх картинки */
   /*font-size: 2em;*/
   /*padding-left: 70px;*/
-  bottom: -285px;
+  bottom: -250px;
 }
 
 .fas:before {
@@ -181,17 +183,17 @@ body {
     position: relative; /* надпись поверх картинки */
     /*font-size: */
     margin: 20px;
-    transform: translate(10%, 1800%);
+    transform: translate(10%, 1570%);
 }
 /* конец настройки надписи (В наличии) */
 
 /* настройка кнопки (быстрый просмотр) */
 .product-preview {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    -ms-transform: translate(-50%, -50%);
+    /*position: relative;*/
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(25%, -50%);
+    /*-ms-transform: translate(-250%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
@@ -213,10 +215,10 @@ body {
 /* кнопка (в корзину) */
 .product-buttons-wrap {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 590%);
-    -ms-transform: translate(-50%, -50%);
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(38%, 500%);
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
@@ -298,14 +300,14 @@ body {
 /* кнопка купить в 1 клик */
 .product-buttons-wrap1 {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 605%);
-    -ms-transform: translate(-50%, -50%);
+    /*top: 50%;
+    left: 50%;*/
+    transform: translate(38%, 515%);
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #f1f1f1;
     color: black;
     font-size: 14px;
-    padding: 10px 36px;
+    padding: 10px 34px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
@@ -322,15 +324,16 @@ body {
 
 /* кнопка like */
 .like {
-    position: relative;
-    top: -210px;
-    left: 80px;
-    /*transform: translate(350%, -900%);*/
-    -ms-transform: translate(-50%, -50%);
+    /*position: relative;*/
+    /*top: -10px;
+    left: 180px;*/
+    /*margin: 150px 5px 15px 20px;*/
+    /*transform: translate(38%, -70%);*/
+    /*-ms-transform: translate(-50%, -50%);*/
     background-color: #FFFFFF;
-    color: black;
+    /*color: black;
     font-size: 14px;
-    padding: 9px 9px 0 17px;
+    padding: 24px 9px 0 17px;*/
     /*border: none;*/
     cursor: pointer;
     border-radius: 20px;
@@ -338,10 +341,10 @@ body {
 }
 
 .like img {
-    max-width: 100%;
-    max-height: 100%;
-    top: 0;
-    left: 0;
+    max-width: 10%;
+    max-height: 10%;
+    top: 40px;
+    left: 240px;
 }
 
 .like img:hover {
@@ -352,7 +355,7 @@ body {
     /* background-color — для цвета фона */
     background-color: #FF0000;
     /* color — для цвета текста */
-    color: white;
+    /*color: white;*/
 }
 /* конец кнопки */
 
@@ -376,9 +379,11 @@ body {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
+    content: counter(slide) "/3";
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
+
 
 /* Modal Content (image) */
 .modal-content {
@@ -426,7 +431,7 @@ body {
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
+    /*transition: 0.3s;*/
 }
 
 /*.right {
@@ -446,13 +451,12 @@ body {
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
 }*/
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
+    /*color: #bbb;*/
+    /*text-decoration: none;*/
     cursor: pointer;
 }
 
@@ -467,9 +471,9 @@ body {
 
 /* слайд картинок в быстром просмотре */
 /* Hide the images by default */
-/*.mySlides {
+.Slides {
   display: none;
-}*/
+}
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
@@ -482,27 +486,27 @@ body {
   cursor: pointer;
   position: absolute;
   top: 40%;
-  width: auto;
+  /*width: auto;*/
   padding: 16px;
-  margin-top: -50px;
+  /*margin-top: -50px;*/
   color: white;
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-size: 40px;
   border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+  /*user-select: none;*/
+  /*-webkit-user-select: none;*/
 }
 
 /* Position the "next button" to the right */
 .next {
   right: 40px;
-  border-radius: 3px 0 0 3px;
+  /*border-radius: 3px 0 0 3px;*/
 }
 
 /* Position the "prev button" to the left */
 .prev {
   left: 40px;
-  border-radius: 3px 0 0 3px;
+  /*border-radius: 3px 0 0 3px;*/
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -523,15 +527,15 @@ body {
 
 /* конец слайда в быстром просмотре */
 
-/* Тест на оформления заказа */
+/* payment таблица */
 
-.row {
+/*.row {
   display: -ms-flexbox; /* IE10 */
-  display: flex;
+  /*display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;
   margin: 0 -16px;
-}
+}*/
 
 .col-25 {
   -ms-flex: 25%; /* IE10 */
@@ -541,6 +545,8 @@ body {
 .col-50 {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
+  width: 30%;
+  float: left;
 }
 
 .col-75 {
@@ -555,45 +561,59 @@ body {
 }
 
 .container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
+  /*background-color: #f2f2f2;*/
+  /*padding: 5px 20px 15px 20px;*/
   border: 1px solid lightgrey;
   border-radius: 3px;
+  width: 30%;
+  float: left;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 50%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 13px;
 }
 
 label {
   margin-bottom: 10px;
+  margin-right: 80px;
   display: block;
 }
 
 .icon-container {
   margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
+  padding: 270px 10px 1px 1px;
+  font-size: 20px;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+h5.nad {
+ background-color: #f2f212;
+ position: relative;
+ left: -410px;
+ width: -1140px;
+ bottom: -280px;
+ border: none;
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: #989898;
   color: white;
   padding: 12px;
-  margin: 10px 0;
+  margin: 160px 30px;
   border: none;
-  width: 100%;
+  width: 48%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #989890;
 }
 
 span.price {
@@ -610,8 +630,6 @@ span.price {
     margin-bottom: 20px;
   }
 }
-
-/* Конец теста */
 
 a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */

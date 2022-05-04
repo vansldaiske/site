@@ -2,11 +2,26 @@
 /* margin: вверх право низ лево */
 body {
     background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
+    background-blend-mode: multiply;
     margin: 10px;
 }
 
 /* верхняя часть сайта */
+
+/* стиль фона страницы 500.html */
+.errors500 {
+    /*background: linear-gradient #989898;*/
+    /*background-blend-mode: multiply;*/
+    margin: 350px;
+}
+
+/* стиль фона страницы contact.html */
+
+.contacts {
+    /*background: linear-gradient #989898;*/
+    /*background-blend-mode: multiply;*/
+    /*margin: -10%;*/
+}
 
 /* Верхняя часть панели с иконками */
 .topnav {
@@ -16,7 +31,7 @@ body {
     margin-left: 50px;
     margin-right: 50px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
+    background-blend-mode: multiply;
 }
 
 /* Стили иконок */

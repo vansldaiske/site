@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">
+    <!--<link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page_title }}</title>
+    <title>{% block title %}Пекарня Ессении{% endblock %}</title>
     <!-- подключение файла стилей css-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <!-- здесь можно писать вместо модуля style.css -->
@@ -20,7 +20,7 @@
     <div class="topnav">
         <a href="/home">Главная</a>
         <a class="info" href="">Доставка</a>
-        <a class="info" href="/home#bottom">Контакты</a>
+        <a class="info" href="/contact">Контакты</a>
     </div>
     </header>
     <section class="content">
@@ -28,7 +28,7 @@
             {% for category in categoryes %}
                 <div class="module-card">
                     <img class="torts" src="{{ url_for('static', filename=category.link_photo) }}">
-                    <h3><a href={{ category.link_name }} target="_blank">{{ category.name }}</a></h3>
+                    <h3><a href="{{ category.link_name }}" target="_blank">{{ category.name }}</a></h3>
                     <p>{{ category.description }}</p>
                 </div>
             {% endfor %}
