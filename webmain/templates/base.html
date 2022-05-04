@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!--<link rel="icon" href="{{ url_for('static', filename='images/maffiny.jpg') }}" type="image">-->
+    <link rel="icon" href="{{ url_for('static', filename='images/maffiny.ico') }}" type="image">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Пекарня Ессении{% endblock %}</title>
     <!-- подключение файла стилей css-->
@@ -14,7 +15,7 @@
 <body>
 <div class="topnav">
     <a href="/home">Главная</a>
-    <a class="contact" href="">Корзина</a>
+    <a class="contact" href="/payment">Корзина</a>
     <a class="contact" href="">Доставка</a>
     <a class="contact" href="/contact">Контакты</a>
     <a class="contact" href="">Избранное</a>

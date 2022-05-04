@@ -29,8 +29,11 @@ def products_list(category):
 
 @blueprint.route("/contact")
 def contact():
-    return render_template("")
+    return render_template("contact.html")
 
+@blueprint.route("/payment")
+def payment():
+    return render_template("payment.html")
 
 # @blueprint.route("/basket")
 # def basket():

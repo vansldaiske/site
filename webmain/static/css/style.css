@@ -1,5 +1,7 @@
 body {
-    /*background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);*/
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply;
+    margin: 10px;
 }
 
 /* Верхняя часть панели с иконками */
@@ -469,9 +471,9 @@ body {
 
 /* слайд картинок в быстром просмотре */
 /* Hide the images by default */
-/*.mySlides {
+.Slides {
   display: none;
-}*/
+}
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
@@ -525,15 +527,15 @@ body {
 
 /* конец слайда в быстром просмотре */
 
-/* Тест на оформления заказа */
+/* payment таблица */
 
-.row {
+/*.row {
   display: -ms-flexbox; /* IE10 */
-  display: flex;
+  /*display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;
   margin: 0 -16px;
-}
+}*/
 
 .col-25 {
   -ms-flex: 25%; /* IE10 */
@@ -543,6 +545,8 @@ body {
 .col-50 {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
+  width: 30%;
+  float: left;
 }
 
 .col-75 {
@@ -557,45 +561,59 @@ body {
 }
 
 .container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
+  /*background-color: #f2f2f2;*/
+  /*padding: 5px 20px 15px 20px;*/
   border: 1px solid lightgrey;
   border-radius: 3px;
+  width: 30%;
+  float: left;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 50%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 13px;
 }
 
 label {
   margin-bottom: 10px;
+  margin-right: 80px;
   display: block;
 }
 
 .icon-container {
   margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
+  padding: 270px 10px 1px 1px;
+  font-size: 20px;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+h5.nad {
+ background-color: #f2f212;
+ position: relative;
+ left: -410px;
+ width: -1140px;
+ bottom: -280px;
+ border: none;
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: #989898;
   color: white;
   padding: 12px;
-  margin: 10px 0;
+  margin: 160px 30px;
   border: none;
-  width: 100%;
+  width: 48%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #989890;
 }
 
 span.price {
@@ -612,8 +630,6 @@ span.price {
     margin-bottom: 20px;
   }
 }
-
-/* Конец теста */
 
 a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
