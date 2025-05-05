@@ -1,216 +1,128 @@
-/* Имена элементов через запятую предписывают свойствам обращаться сразу и к body, и к h1. */
-/* margin: вверх право низ лево */
 body {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply;
-    margin: 10px;
+    background-color: #f8f3e8;
+    color: #6d4c41;
 }
 
-/* верхняя часть сайта */
-
-/* стиль фона страницы 500.html */
-.errors500 {
-    /*background: linear-gradient #989898;*/
-    /*background-blend-mode: multiply;*/
-    margin: 350px;
+h1, h2, h3, h4, h5, h6 {
+    color: #5d4037;
 }
 
-/* стиль фона страницы contact.html */
-
-.contacts {
-    /*background: linear-gradient #989898;*/
-    /*background-blend-mode: multiply;*/
-    /*margin: -10%;*/
+.navbar {
+    background-color: #f8f3e8 !important;
+    border-bottom: 1px solid #e0d7cd; /* Тонкая линия снизу для аккуратности */
 }
 
-/* Верхняя часть панели с иконками */
-.topnav {
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #5d4037 !important; /* Цвет как в "Категории товаров" */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #8d6e63 !important; /* Нежный коричневый цвет при наведении */
+}
+
+.navbar-collapse,
+.navbar-nav {
+    background-color: #f8f3e8 !important; /* Фон в бургер-меню */
+    padding: 10px 0;
+}
+
+.navbar-toggler {
+    border-color: #5d4037;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(93, 64, 55, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.hover-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    height: 320px;
     overflow: hidden;
-    border-radius: 8px;
-    margin-top: 120px;
-    margin-left: 50px;
-    margin-right: 50px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply;
 }
 
-/* Стили иконок */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Change color on hover(Изменение цвета при наведении иконок) */
-.topnav a:hover {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
-    color: black;
-}
-
-/* Иконки справа */
-.topnav .info {
-    color: white;
-    float: right;
-}
-
-/*{box-sizing: border-box;}*/
-
-
-.header {
-     text-align: center;
-     color: black;
-     font-family: 'Bradley Hand';
-     border-radius: 8px;
-     background-size: cover;
-     background-position: center bottom;
-     padding-top: 20px;
-}
-
-h1 {
-    font-size: 55px;
-    line-height: 70px;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 40px;
-    line-height: 50px;
-    width: 630px;
-    margin: 30px auto 0;
-}
-
-/* конец верхней части */
-
-/* основной блок для ячеек с фото, именем и описанием */
-.content {
-    margin: 80px 30px 30px;
-}
-
-/* наименование товара, описания его и блок для ячеек */
-.rules {
-    margin: 35px;
-}
-
-.rules h3 {
-    font-size: 35px;
-    font-family: 'Marker Felt';
-    font-weight: bold;
-    margin: 30px 60px 30px 0;
-    /*text-shadow: 4px 4px 5px #708090;*/
-    transform: translate(10%);
-}
-
-.rules p {
-    font-family: 'Trattatello';
-    font-size: 30px;
-    color: #800000;
-    margin-left: 15px;
-    line-height: 30px;
-    margin-bottom: 90px;
-    opacity: 1;
-    /*text-shadow: 4px 4px 5px #93a5cf;*/
-}
-
-/* конец */
-
-/*<! -- отдельный блок по продуктам -- >*/
-.torts {
+.card {
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    min-height: 40px;
     height: auto;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .card {
+        min-height: 30px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+}
+
+.card-img-top {
     width: 100%;
-    background-size: cover;
-    background-position: center;
-    border-width: 2px;
-    border-style: solid;
-    display: inline-block;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 200px;
+    object-fit: cover;
 }
 
-/*<! -- конец блока по тортам -->*/
-
-/*<! -- отдельный блок по категориям на основной странице -->.*/
-/* карточка торты */
-.module-card {
-    width: 420px;
-    margin-right: 68px;
-    display: inline-block;
-    vertical-align: top;
-    padding: 45px 80px 0 75px;
+.card-title {
+    font-size: 1.2rem;
+    color: #6b4c3b;
+    font-weight: 600;
 }
 
-/*<! -- разная инфа о сайте и прочее -->*/
-.footer {
-    height: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
-    box-sizing: border-box;
+.card-text {
+    font-size: 0.85rem;
+    color: #8d6e63; /* нежно коричневый цвет */
 }
 
-.gorod {
-    font-size: 17px;
-    float: right;
-    margin: 0 60px 0 0;
+.row {
+    gap: 1rem;
 }
 
-.contacts {
-    font-size: 19px;
-    float: right;
-    margin: 0 -60px 0 0;
-    line-height: 70px;
+/* Анимация появления */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.regim {
-    font-size: 15px;
-    float: right;
-    margin: 0 -130px 0 0;
-    line-height: 115px;
+.animate-card {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
 }
 
-.logo {
-  width: 148;
-  height: 38;
-  background-image:
-  url();
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: auto;
-  background-color: #7FFF00;
-}
-
-a {
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-   }
-
-
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
-
-#Home {background-color: #FF0000;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
+/* Чтобы было красиво когда много карточек */
+.animate-card:nth-child(1) { animation-delay: 0s; }
+.animate-card:nth-child(2) { animation-delay: 0.1s; }
+.animate-card:nth-child(3) { animation-delay: 0.2s; }
+.animate-card:nth-child(4) { animation-delay: 0.3s; }
+.animate-card:nth-child(5) { animation-delay: 0.4s; }
+.animate-card:nth-child(6) { animation-delay: 0.5s; }
+.animate-card:nth-child(7) { animation-delay: 0.6s; }
+.animate-card:nth-child(8) { animation-delay: 0.7s; }
+.animate-card:nth-child(9) { animation-delay: 0.8s; }
+.animate-card:nth-child(10) { animation-delay: 0.9s; }
