@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>{% block title %}This page does not exist{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="errors500">
+  <h1>404 - This page does not exist</h1>
+  <h3>Oops... we seem to have made a mistake, sorry!</h3>
+  <h3><a href="{{ url_for('products_api.index') }}">Go somewhere nice instead</a></h3>
+</body>
+</html>
