@@ -7,6 +7,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #5d4037;
 }
 
+header {
+    height: 60px;
+
+}
+
 .navbar {
     background-color: #f8f3e8 !important;
     border-bottom: 1px solid #e0d7cd; /* Тонкая линия снизу для аккуратности */
@@ -16,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav .nav-link {
     color: #5d4037 !important; /* Цвет как в "Категории товаров" */
     font-weight: 500;
+    margin-top: -20px;
     transition: color 0.3s;
 }
 
@@ -74,24 +80,14 @@ h1, h2, h3, h4, h5, h6 {
 .hero-subtitle {
     font-size: 1.25rem;
     font-weight: 300;
-}
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    .hero-subtitle {
-        font-size: 1rem;
-    }
 }
-
 
 .hover-card {
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     border-radius: 0.75rem;
     height: 320px;
-    overflow: hidden;
 }
 
 .hover-card:hover {
@@ -108,20 +104,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-}
-
-@media (max-width: 767.98px) {
-    .card {
-        min-height: 30px;
-    }
-
-    .card-title {
-        font-size: 1rem;
-    }
+    padding: 10px;
 }
 
 .card-img-top {
@@ -132,20 +116,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-title {
     font-size: 1.2rem;
-    color: #6b4c3b;
     font-weight: 600;
-}
-
-.card-text {
-    font-size: 0.85rem;
-    color: #8d6e63; /* нежно коричневый цвет */
+    color: #6b4c3b;
 }
 
 .row {
     gap: 1rem;
 }
 
-/* Анимация появления */
+/* Animation of appearance */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -173,3 +152,37 @@ h1, h2, h3, h4, h5, h6 {
 .animate-card:nth-child(8) { animation-delay: 0.7s; }
 .animate-card:nth-child(9) { animation-delay: 0.8s; }
 .animate-card:nth-child(10) { animation-delay: 0.9s; }
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .card {
+        min-height: 30px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+}
+
+/* Section abouth */
+.about-section img {
+    width: 100%; /* или например 200px */
+    max-width: 250px; /* ограничение максимального размера */
+    border-radius: 15px; /* закругление углов */
+    transition: transform 0.3s ease;
+    margin-left: 30px;
+}
+
+.about-section img:hover {
+    transform: scale(1.1);
+}
+
+.about-section p {
+    font-size: 0.95rem;
+    color: #6b4c3b;
+}
