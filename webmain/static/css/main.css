@@ -1,3 +1,7 @@
+/* ============================
+   Global Styles & Typography
+   ============================ */
+
 body {
     background-color: #f8f3e8;
     color: #6d4c41;
@@ -7,19 +11,22 @@ h1, h2, h3, h4, h5, h6 {
     color: #5d4037;
 }
 
+/* ============================
+   Header / Navbar
+   ============================ */
+
 header {
     height: 60px;
-
 }
 
 .navbar {
     background-color: #f8f3e8 !important;
-    border-bottom: 1px solid #e0d7cd; /* Тонкая линия снизу для аккуратности */
+    border-bottom: 1px solid #e0d7cd; /* thin bottom border */
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
-    color: #5d4037 !important; /* Цвет как в "Категории товаров" */
+    color: #5d4037 !important;
     font-weight: 500;
     margin-top: -20px;
     transition: color 0.3s;
@@ -27,12 +34,12 @@ header {
 
 .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
-    color: #8d6e63 !important; /* Нежный коричневый цвет при наведении */
+    color: #8d6e63 !important;
 }
 
 .navbar-collapse,
 .navbar-nav {
-    background-color: #f8f3e8 !important; /* Фон в бургер-меню */
+    background-color: #f8f3e8 !important;
     padding: 10px 0;
 }
 
@@ -41,8 +48,13 @@ header {
 }
 
 .navbar-toggler-icon {
+    /* custom hamburger icon for mobile */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(93, 64, 55, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+/* ============================
+   Hero Section
+   ============================ */
 
 .hero-section {
     height: 100vh;
@@ -55,9 +67,12 @@ header {
     position: relative;
     text-align: center;
     padding: 0 1rem;
+    animation: fadeInHero 1.5s ease-in-out forwards;
+    opacity: 0;
 }
 
 .hero-section::before {
+    /* dark overlay layer */
     content: "";
     position: absolute;
     top: 0; left: 0;
@@ -80,8 +95,11 @@ header {
 .hero-subtitle {
     font-size: 1.25rem;
     font-weight: 300;
-
 }
+
+/* ============================
+   Product Cards
+   ============================ */
 
 .hover-card {
     transition: transform 0.3s, box-shadow 0.3s;
@@ -124,7 +142,39 @@ header {
     gap: 1rem;
 }
 
-/* Animation of appearance */
+/* ============================
+   Footer
+   ============================ */
+
+.footer {
+    background-color: #f8f3e8;
+    border-top: 1px solid #e0d7cd;
+    font-size: 0.9rem;
+    color: #6d4c41;
+}
+
+/* Social icons in footer */
+.footer .social-icons a {
+    color: #6d4c41;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a.instagram:hover {
+    color: #e1306c; /* Instagram pink-purple */
+}
+
+.footer .social-icons a.telegram:hover {
+    color: #0088cc; /* Telegram blue */
+}
+
+.footer .social-icons a.whatsapp:hover {
+    color: #25d366; /* WhatsApp green */
+}
+
+/* ============================
+   Animations
+   ============================ */
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -136,12 +186,18 @@ header {
     }
 }
 
+@keyframes fadeInHero {
+    to {
+        opacity: 1;
+    }
+}
+
 .animate-card {
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
 
-/* Чтобы было красиво когда много карточек */
+/* Delay animations for card sequence */
 .animate-card:nth-child(1) { animation-delay: 0s; }
 .animate-card:nth-child(2) { animation-delay: 0.1s; }
 .animate-card:nth-child(3) { animation-delay: 0.2s; }
@@ -153,13 +209,23 @@ header {
 .animate-card:nth-child(9) { animation-delay: 0.8s; }
 .animate-card:nth-child(10) { animation-delay: 0.9s; }
 
+/* ============================
+   Responsive (Mobile)
+   ============================ */
+
 @media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
+
     .hero-subtitle {
         font-size: 1rem;
     }
+
     .card {
         min-height: 30px;
     }
@@ -169,13 +235,15 @@ header {
     }
 }
 
-/* Section abouth */
+/* ============================
+   About Section
+   ============================ */
+
 .about-section img {
-    width: 100%; /* или например 200px */
-    max-width: 250px; /* ограничение максимального размера */
-    border-radius: 15px; /* закругление углов */
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
     transition: transform 0.3s ease;
-    margin-left: 30px;
 }
 
 .about-section img:hover {
