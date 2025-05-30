@@ -22,14 +22,19 @@ header {
 .navbar {
     background-color: #f8f3e8 !important;
     border-bottom: 1px solid #e0d7cd; /* thin bottom border */
+    position: relative;
+    z-index: 10;
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
     color: #5d4037 !important;
     font-weight: 500;
-    margin-top: -20px;
+    /*margin-top: -70px;*/
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
 }
 
 .navbar-brand:hover,
@@ -40,7 +45,9 @@ header {
 .navbar-collapse,
 .navbar-nav {
     background-color: #f8f3e8 !important;
-    padding: 10px 0;
+    /*padding: 10px 0;*/
+    text-align: left !important;
+    align-items: flex-start !important;
 }
 
 .navbar-toggler {
@@ -50,6 +57,11 @@ header {
 .navbar-toggler-icon {
     /* custom hamburger icon for mobile */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(93, 64, 55, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar .badge {
+  font-size: 0.6rem;
+  padding: 0.3em 0.4em;
 }
 
 /* ============================
@@ -214,6 +226,14 @@ header {
    ============================ */
 
 @media (max-width: 768px) {
+    .navbar-nav {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+    .navbar .badge {
+        font-size: 0.65rem;
+        padding: 0.3em 0.5em;
+    }
     .hero-section {
         background-attachment: scroll;
     }

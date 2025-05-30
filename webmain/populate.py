@@ -88,12 +88,12 @@ def populate():
     for category in list_category:
         existing_category = conn.query(Category).filter_by(link_name=category["link_name"]).first()
         if not existing_category:
-        new_category = Category(
-            name=category["name"],
-            description=category["description"],
-            link_name=category["link_name"],
-            link_photo=category["link_photo"]
-        )
+            new_category = Category(
+                name=category["name"],
+                description=category["description"],
+                link_name=category["link_name"],
+                link_photo=category["link_photo"]
+            )
         conn.add(new_category)
         conn.commit()
 
@@ -103,15 +103,15 @@ def populate():
         for product in category_products:
             existing_product = conn.query(Products).filter_by(name=product["name"]).first()
             if not existing_product:
-            new_product = Products(
-                name=product["name"],
-                description=product["description"],
-                price=product["price"],
-                link_photo=product["link_photo"],
-                link_like=product["link_like"],
-                link_basket=product["link_basket"],
-                category=new_category
-            )
+                new_product = Products(
+                    name=product["name"],
+                    description=product["description"],
+                    price=product["price"],
+                    link_photo=product["link_photo"],
+                    link_like=product["link_like"],
+                    link_basket=product["link_basket"],
+                    category=new_category
+                )
             conn.add(new_product)
             conn.commit()
 

@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Пекарня Ессении{% endblock %}</title>
+    <title>{% block title %}Flourlove{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -33,18 +33,9 @@
   </div>
   <div class="col-25">
       <div class="container">
-        <h4>Выбрано:
-          <span class="price" style="color:black">
-<!--            <i class="fa fa-shopping-cart"></i>-->
-            <b>4</b>
-          </span>
-        </h4>
-        <p><a href="#"></a> <span class="price">400руб.</span></p>
-        <p><a href="#">Торт шоколадный</a> <span class="price">400руб.</span></p>
-        <p><a href="#">Торт шоколадный</a> <span class="price">400руб.</span></p>
-        <p><a href="#">Торт шоколадный</a> <span class="price">400руб.</span></p>
+        <p><a href="#">{{ product_name }}</a> <span class="price">{{ product_price }} руб.</span></p>
         <hr>
-        <p>Итого: <span class="price" style="color:black"><b>1600руб.</b></span></p>
+        <p>Итого: <span class="price" style="color:black"><b>{{ product_price }} руб.</b></span></p>
       </div>
   </div>
   <h5 class="nad">Принимаемые карты</h5>

@@ -1,53 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
-{% for product in products %}
-    <ul class="products_clearfix">
-        <li class="product-wrapper">
-            <a class="product">
-                <div class="product-photo">
-                    <img src="{{ url_for('static', filename=product.link_photo) }}" alt="">
-                    <button class="like">
-                            <img src="{{ url_for('static', filename=product.link_like) }}"></button>
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.description }}</p>
-                    <i class="fas"></i><h5>В наличии</h5>
-                    <h4 class="price-new"> {{ product.price }} руб.</h4> <!-- этот класс можно вставить в любую строку если хочу перечеркнуть надпись -->
-                    <div>
-                        <button id="Btn" class="product-preview">Быстрый просмотр</button>
-                        <button class="product-buttons-wrap" onclick="openNav()">
-                            <img src="{{ url_for('static', filename=product.link_basket) }}">В корзину</button>
-                        <button class="product-buttons-wrap1">Купить в 1 клик</button>
-                    </div>
-                </div>
-            </a>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <!-- Слайд изображений -->
-                <div class="Slides">
-                    <a class="numbertext">1 / 3</a>
-                    <img class="modal-content" src="{{ url_for('static', filename=product.link_photo) }}">
-                </div>
-                <div class="Slides">
-                    <a class="numbertext" >2 / 3</a>
-                    <img class="modal-content" src="{{ url_for('static', filename=product.link_photo) }}">
-                </div>
-                <div class="Slides">
-                    <a class="numbertext">3 / 3</a>
-                    <img class="modal-content" src="{{ url_for('static', filename=product.link_photo) }}">
-                </div>
-                <span class="close">×</span>
-<!--                &lt;!&ndash; Next and previous buttons &ndash;&gt;-->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% for product in products %}
+      <div class="col-6 col-md-3 mb-4">
+        <div class="card h-100 position-relative border border-success rounded shadow-sm">
+          <!-- Like -->
+          <button class="btn-like btn position-absolute top-0 end-0 m-2">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+
+          <!-- Image -->
+          <div class="position-relative">
+            <img src="{{ url_for('static', filename=product.link_photo) }}" class="card-img-top" alt="{{ product.name }}">
+              <div class="position-absolute start-50 translate-middle text-center px-2" style="top: 75%;">
+                <button class="btn btn-light rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#previewModal{{ product.id }}">
+                  Быстрый просмотр
+                </button>
+              </div>
+          </div>
+
+          <!-- Content -->
+          <div class="card-body">
+            <h5 class="card-title text-center fw-bold">{{ product.name }}</h5>
+            <p class="card-text small text-center">{{ product.description }}</p>
+            <div class="price-circle">{{ product.price }}<span>₽</span></div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="card-footer bg-transparent border-0 d-flex flex-column align-items-center gap-2">
+            <button class="btn btn-light w-75 rounded-pill add-to-cart"
+                    data-id="{{ product.id }}"
+                    data-name="{{ product.name }}"
+                    data-price="{{ product.price }}">
+              <i class="bi bi-cart-plus me-1"></i> В корзину
+            </button>
+            <button class="btn btn-light w-75 rounded-pill btn-buy-now"
+                    data-id="{{ product.id }}"
+                    data-name="{{ product.name }}"
+                    data-price="{{ product.price }}">
+                    Купить в 1 клик
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="previewModal{{ product.id }}" tabindex="-1" aria-labelledby="previewModalLabel{{ product.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="previewModalLabel{{ product.id }}">{{ product.name }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!-- Боковая панель *купить в 1 клик* -->
-<!--            <div id="mySidenav1" class="sidenav">-->
-<!--                <span class="closebtn" onclick="closeNav()">×</span>-->
-<!--                <a href="/basket">Посмотреть корзину</a>-->
-<!--                <a href="#">Оформить заказ</a>-->
-<!--                <a href="#" onclick="closeNav()">Продолжить покупки</a>-->
-<!--            </div>-->
-        </li>
-    </ul>
-{% endfor %}
+            <div class="modal-body">
+              <div id="carousel{{ product.id }}" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename=product.link_photo) }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename=product.link_photo) }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename=product.link_photo) }}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ product.id }}" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ product.id }}" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -785,3 +785,4 @@ function showSlides(n) {
 //function closeNav() {
 //    document.getElementById("mySidenav8").style.width = "0"; /* кнопка закрытия боковой панели */
 //}
+

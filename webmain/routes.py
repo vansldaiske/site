@@ -12,7 +12,7 @@ blueprint = Blueprint('products_api', __name__)
 def index():
     conn = Session()
     categoryes = conn.query(Category).all()
-    title = "Пекарня Ессении"
+    title = "Flourlove"
     icon = 'images/maffiny.jpg' #no work
 
     return render_template("main.html", page_title=title, categoryes=categoryes, page_icon=icon)
@@ -33,18 +33,21 @@ def contact():
 
 @blueprint.route("/payment")
 def payment():
-    return render_template("payment.html")
+    product_id = request.args.get('id')
+    product_name = request.args.get('name')
+    product_price = request.args.get('price')
 
-# @blueprint.route("/basket")
-# def basket():
-#     return render_template("products.html")
+    return render_template('payment.html',
+                           product_id=product_id,
+                           product_name=product_name,
+                           product_price=product_price)
 
-# @blueprint.errorhandler(500)
-# def page_not_found(e):
-#     # if a request is in our blog URL space
-#     if request.path.startswith('/contact/'):
-#         # we return a custom blog 404 page
-#         return render_template("contact/500.html"), 500
-#     else:
-#         # otherwise we return our generic site-wide 404 page
-#         return render_template("500.html"), 500
+@blueprint.errorhandler(500)
+def page_not_found(e):
+    # if a request is in our blog URL space
+    if request.path.startswith('/contact/'):
+        # we return a custom blog 404 page
+        return render_template("contact/500.html"), 500
+    else:
+        # otherwise we return our generic site-wide 404 page
+        return render_template("500.html"), 500
