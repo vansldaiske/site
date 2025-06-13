@@ -16,7 +16,7 @@
             <img src="{{ url_for('static', filename=product.link_photo) }}" class="card-img-top" alt="{{ product.name }}">
               <div class="position-absolute start-50 translate-middle text-center px-2" style="top: 75%;">
                 <button class="btn btn-light rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#previewModal{{ product.id }}">
-                  Быстрый просмотр
+                  Quick View
                 </button>
               </div>
           </div>
@@ -25,7 +25,7 @@
           <div class="card-body">
             <h5 class="card-title text-center fw-bold">{{ product.name }}</h5>
             <p class="card-text small text-center">{{ product.description }}</p>
-            <div class="price-circle">{{ product.price }}<span>₽</span></div>
+            <div class="price-circle">{{ product.price }}<span>$</span></div>
           </div>
 
           <!-- Buttons -->
@@ -34,13 +34,13 @@
                     data-id="{{ product.id }}"
                     data-name="{{ product.name }}"
                     data-price="{{ product.price }}">
-              <i class="bi bi-cart-plus me-1"></i> В корзину
+              <i class="bi bi-cart-plus me-1"></i> Add to Cart
             </button>
             <button class="btn btn-light w-75 rounded-pill btn-buy-now"
                     data-id="{{ product.id }}"
                     data-name="{{ product.name }}"
                     data-price="{{ product.price }}">
-                    Купить в 1 клик
+                    Buy Now
             </button>
           </div>
         </div>
