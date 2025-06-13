@@ -6,3 +6,4 @@ cgi-bin/
 config.py
 *.db
 .env
+venv/
