@@ -3,5 +3,8 @@ __pycache__/
 attachment/
 cgi-bin/
 ._site__env/
-config.py/
 venv/
+config.py
+*.db
+.env
+

@@ -1,618 +1,176 @@
+/* ============================
+   Global Styles & Typography
+   ============================ */
+
 body {
-    /*background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);*/
+    background-color: #f8f3e8;
+    color: #6d4c41;
 }
 
-/* Верхняя часть панели с иконками */
-.topnav {
-    overflow: hidden;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 8px;
-    /*background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);*/
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
+h1, h2, h3, h4, h5, h6 {
+    color: #5d4037;
 }
 
-/* Стили иконок */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+/* ============================
+   Header / Navbar
+   ============================ */
+
+header {
+    height: 60px;
 }
 
-/* Change color on hover(Изменение цвета при наведении иконок) */
-.topnav a:hover {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply;
-    color: black;
-}
-
-/* Иконки справа */
-.topnav .contact {
-    color: white;
-    float: right;
-}
-
-/*<! -- эксперимент с новыми ячейками -->*/
-.product-wrapper {
-	display: block;
-	width: 100%;
-	float: left;
-	transition: width .2s;
-	margin: 10px 0 33px 0;
-	/*background-color: #0000FF;*/
-}
-
-/* настройка изображения ячеек под разные экраны */
-@media only screen and (min-width: 450px) {
-	.product-wrapper {
-		width: 50%;
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	.product-wrapper {
-		width: 33.333%;
-	}
-}
-
-@media only screen and (min-width: 1000px) {
-	.product-wrapper {
-		width: 25%;
-	}
-}
-
-/* основное окно ячеки куда вставляю изображение и подробности товара*/
-.product {
-	display: block;
-	border: 3px solid #b5e9a7;
-	border-radius: 10px;
-	position: relative;
-	background: #F0FFFF;
-	margin: 0 40px 30px 0;
-	text-decoration: none;
-	color: #474747;
-	z-index: 0;
-	height: 500px;
-	/*background-color: #000000*/
-}
-
-/* настройка ячейки для изображения товара */
-.product-photo {
-	position: relative;
-	padding-bottom: 100%;
-	overflow: hidden;
-	border-radius: 8px;
-}
-
-.product-photo img {
-	position: absolute;
-	top: 0;
-	bottom: 2;
-	left: 0;
-	right: 0;
-	max-width: 100%;
-	max-height: 100%;
-	margin: auto;
-	border-radius: 8px;
-	transition: transform .4s ease-out;
-}
-
-/* приблежение картинки */
-.product-photo img:hover {
-	transform: scale(1.05);
-}
-
-/* конец настройки изображаения */
-
-/* настройка описания товара */
-.product-text {
-	position: relative;
-	margin: 20px;
-	margin-bottom: -90px;
-	font-size: 1em;
-	line-height: 1.4em;
-	height: 5.6em;
-	overflow: hidden;
-	transform: translate(-0.13%, 210%);
-	/*background-color: #000000*/
-}
-
-/* настройка хуйни типо в конце текст начинает изсчезать */
-.product-text:after {
-	content: '';
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 6.7em;
-	height: 1.6em;
-	background: linear-gradient(to left top, #F0FFFF, rgba(255, 255, 255, 0));
-}
-
-/* настройка наименования товара (маффины) */
-.product h3 {
-    position: relative; /* надпись поверх картинки */
-	margin: 20px;
-	transform: translate(-0.13%, 900%);
-	color: #000000
-}
-
-/* настройка цены товара */
-.price-new {
-    position: relative; /* надпись поверх картинки */
-    margin: 20px;
-    transform: translate(-0.100%, 1450%);
-    color: #000000
-}
-
-.price-old {
-    text-decoration: line-through #ff3535 !important; /* перечеркивает сумму в красный цвет */
-}
-/* конец настройки цены товара */
-
-/* настройка галочки */
-.fas {
-  position: relative; /* надпись поверх картинки */
-  /*font-size: 2em;*/
-  /*padding-left: 70px;*/
-  bottom: -285px;
-}
-
-.fas:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: 15px;
-  height: 8px;
-  border-left: 4px solid #f00c;
-  border-bottom: 4px solid #f00c;
-  transform: rotate(-50deg);
-  /*transform: translate(110%, 2455%);*/
-}
-/* конец настройки галочки */
-
-/* настройка надписи (В наличии) */
-.product h5 {
-    position: relative; /* надпись поверх картинки */
-    /*font-size: */
-    margin: 20px;
-    transform: translate(10%, 1800%);
-}
-/* конец настройки надписи (В наличии) */
-
-/* настройка кнопки (быстрый просмотр) */
-.product-preview {
+.navbar {
+    background-color: #f8f3e8 !important;
+    border-bottom: 1px solid #e0d7cd; /* thin bottom border */
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    color: black;
-    font-size: 14px;
-    padding: 10px 35px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    text-align: center;
-    outline: none; /*убирает грацину вокруг кнопки получается чистое нажатие без лишнего овала*/
+    z-index: 10;
 }
 
-.product-preview:hover {
-	/*transform: translateY(8em);*/
-	/*opacity: 2;*/
-	background-color: #FFF0F5;
-    color: black;
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #5d4037 !important;
+    font-weight: 500;
+    /*margin-top: -70px;*/
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
 }
 
-/* кнопка (в корзину) */
-.product-buttons-wrap {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 590%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    color: black;
-    font-size: 14px;
-    padding: 10px 35px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    text-indent: 30px;
-    outline: none;
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #8d6e63 !important;
 }
 
-/* изображение корзины */
-.product-buttons-wrap img {
-    max-width: 70%;
-    max-height: 70%;
-    bottom: -2px;
-    left: -70px;
+.navbar-collapse,
+.navbar-nav {
+    background-color: #f8f3e8 !important;
+    /*padding: 10px 0;*/
+    text-align: left !important;
+    align-items: flex-start !important;
 }
 
-/* тень кнопки */
-.product-buttons-wrap1:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+.navbar-toggler {
+    border-color: #5d4037;
 }
 
-/* Боковая панель */
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 610px;
+.navbar-toggler-icon {
+    /* custom hamburger icon for mobile */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(93, 64, 55, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    border-radius: 8px;
-    border-style: solid;
-    margin-right: 20px;
-    margin-left: 30px;
-    margin-bottom: 10px;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: #818181;
-    cursor: pointer;
-}
-
-.sidenav .closebtn:hover {
-    color: #f1f1f1;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.navbar .badge {
+  font-size: 0.6rem;
+  padding: 0.3em 0.4em;
 }
 
 
-/* конец кнопки */
+/* ======================
+   Product Card Enhancements
+========================= */
 
-/* кнопка купить в 1 клик */
-.product-buttons-wrap1 {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 605%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    color: black;
-    font-size: 14px;
-    padding: 10px 36px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    text-align: center;
-    outline: none;
+/* Card shadow and border */
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid #e2c9b8;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff8f2;
 }
 
-/* тень кнопки */
-.product-buttons-wrap:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* конец кнопки купить в 1 клик */
-
-/* кнопка like */
-.like {
-    position: relative;
-    top: -210px;
-    left: 80px;
-    /*transform: translate(350%, -900%);*/
-    -ms-transform: translate(-50%, -50%);
-    background-color: #FFFFFF;
-    color: black;
-    font-size: 14px;
-    padding: 9px 9px 0 17px;
-    /*border: none;*/
-    cursor: pointer;
-    border-radius: 20px;
-    outline: none;
+/* Heart (like) button */
+.btn-like {
+  background-color: #a94442;
+  border-radius: 50%;
+  z-index: 2;
+  padding: 6px 8px;
+  font-size: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #FAEBD7; /* ярко-розовое сердечко */
 }
 
-.like img {
-    max-width: 100%;
-    max-height: 100%;
-    top: 0;
-    left: 0;
-}
 
-.like img:hover {
-    transform: scale(1.15);
-}
-
-.clicked {
-    /* background-color — для цвета фона */
-    background-color: #FF0000;
-    /* color — для цвета текста */
-    color: white;
-}
-/* конец кнопки */
-
-/* Модальное окно */
-/*#myImg {
-    border-radius: 5px;
-    /*cursor: pointer;
-    transition: 0.3s;
-}
-
-#myImg:hover {opacity: 1;}*/
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* картинка будет перемещаться вверх и вниз по странице когда пользователь делает скролл */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 70%;
-    max-width: 800px;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-}
-
-@keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
-}
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-/*.right {
-    position: absolute;
-    top: 350px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.left {
-    position: absolute;
-    top: 350px;
-    left: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}*/
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-}
-
-/* конец модального окна */
-
-/* слайд картинок в быстром просмотре */
-/* Hide the images by default */
-/*.mySlides {
-  display: none;
-}*/
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 40px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 40px;
-  border-radius: 3px 0 0 3px;
-}
-
-/* Position the "prev button" to the left */
-.prev {
-  left: 40px;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 20px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 15px;
-  left: 20px;
-}
-
-/* конец слайда в быстром просмотре */
-
-/* Тест на оформления заказа */
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
-
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
-
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
-
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
-
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
-
-.btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
+/* Preview button (centered on image) */
+.card .btn[data-bs-target^="#previewModal"] {
+  height: 40px;
+  width: 190px;
+  object-fit: cover;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  /*transform: translate(80%, -120%);*/
+  background-color: #b08968;
+  opacity: 0.9;
+  font-size: 0.875rem;
   border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #45a049;
+.card:hover .btn {
+  opacity: 1;
 }
 
-span.price {
-  float: right;
-  color: grey;
+/* Footer buttons */
+.card-footer button {
+  background-color: #a9745a;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  border: none;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column-reverse;
+.card-footer button:hover {
+  background-color: #a17354;
+}
+
+/* Product price */
+.price-circle {
+  background-color: #fff4e6;
+  color: #a94442;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  transform: rotate(-3deg);
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.price-circle span {
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+
+
+
+/* Modal images */
+.modal-body img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* ============================
+   Animations
+   ============================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
   }
-  .col-25 {
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
-
-/* Конец теста */
-
-a {
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-   }
