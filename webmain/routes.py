@@ -1,9 +1,7 @@
-# coding=utf-8
-
-from flask import Blueprint, Flask, render_template, url_for, request, Response, abort
-from http import HTTPStatus
+from flask import Blueprint, Flask, render_template, url_for, request, redirect, abort, flash
+from flask_login import login_user
 from webmain.database import migrate, Session
-from webmain.model import Products, Category
+from webmain.models import Products, Category, User
 
 blueprint = Blueprint('products_api', __name__)
 
@@ -16,6 +14,25 @@ def index():
     icon = 'images/maffiny.jpg' #no work
 
     return render_template("main.html", page_title=title, categoryes=categoryes, page_icon=icon)
+
+@blueprint.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        conn = Session()
+        email = request.form['email']
+        password = request.form['password']
+
+        user = conn.query(User).filter_by(email=email).first()
+
+        if user and user.check_password(password):
+            login_user(user)  # 🔑 логин через Flask-Login
+            flash('You are logged in.', 'success')
+            return redirect(url_for('products_api.index'))
+        else:
+            flash('Invalid email or password.', 'danger')
+
+    return render_template('login.html')
+
 
 @blueprint.route("/<category>")
 def products_list(category):

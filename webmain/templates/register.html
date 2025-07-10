@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+
+{% block content %}
+<div class="container py-5" style="max-width:420px;">
+  <h2 class="mb-4 text-center">Create account</h2>
+
+  <form method="post" action="{{ url_for('auth.register') }}">
+    {{ form.hidden_tag() }}
+
+    {{ ui.render_field(form.name)       }}
+    {{ ui.render_field(form.lastname)   }}
+    {{ ui.render_field(form.phone,  'tel') }}
+    {{ ui.render_field(form.email,  'email') }}
+    {{ ui.render_field(form.password,   'password') }}
+
+    <!-- Google reCAPTCHA -->
+    <div class="mb-3">
+      {{ form.recaptcha }}               {# виджет #}
+      {% if form.recaptcha.errors %}
+        <div class="invalid-feedback d-block">{{ form.recaptcha.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    {{ form.submit(class="btn btn-success w-100") }}
+  </form>
+</div>
+{% endblock %}

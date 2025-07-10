@@ -1,0 +1,11 @@
+{# templates/_macros.html #}
+{% macro render_field(field, type_hint='text') -%}
+  <div class="mb-3">
+    {{ field.label(class="form-label") }}
+    {{ field(class="form-control", type=type_hint,
+             class_="form-control is-invalid" if field.errors else "form-control") }}
+    {% if field.errors %}
+      <div class="invalid-feedback d-block">{{ field.errors[0] }}</div>
+    {% endif %}
+  </div>
+{%- endmacro %}

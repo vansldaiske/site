@@ -1,6 +1,6 @@
 from webmain.database import Session, Base
 # from webmain.products_add import create_product
-from webmain.model import Products, Category
+from webmain.models import Products, Category
 
 list_products = [
 #     {

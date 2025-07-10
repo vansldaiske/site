@@ -1,6 +1,4 @@
-# from sqlalchemy.orm.session import Session
-from webmain.model import Products
-# from sqlalchemy.orm import Session
+from webmain.models import Products
 from webmain.database import Session
 
 def create_product(db: Session, name, description, price, category, link_photo, link_like, link_basket):

@@ -1,7 +1,15 @@
-  const cart = {};
-  const cartCount = document.getElementById("cartCount");
-  const cartItems = document.getElementById("cartItems");
-  const cartTotal = document.getElementById("cartTotal");
+const cart = {};
+const cartCount = document.getElementById("cartCount");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+
+ // Пытаемся загрузить корзину из localStorage
+const savedCart = localStorage.getItem("cart");
+if (savedCart) {
+  Object.assign(cart, JSON.parse(savedCart));
+  renderCart(); // Отрисуем, если что-то было
+}
+
 
   document.querySelectorAll(".add-to-cart").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -52,43 +60,41 @@
     cartCount.style.display = count > 0 ? "inline-block" : "none";
 
     // ➖ Decrease
-    document.querySelectorAll(".decrease-qty").forEach(button => {
-      button.addEventListener("click", () => {
-        const id = button.dataset.id;
-        if (cart[id]) {
-          if (cart[id].quantity === 1) {
-            const confirmed = confirm(`Delete "${chart[id].name}" from the trash?`);
-            if (!confirmed) return;
-            delete cart[id];
-          } else {
-            cart[id].quantity--;
-          }
-          renderCart();
+    document.querySelectorAll(".decrease-qty").forEach(btn => {
+      btn.onclick = () => {                      // <= перезаписываем
+        const id = btn.dataset.id;
+        if (!cart[id]) return;
+
+        if (cart[id].quantity === 1) {
+          const ok = confirm(`Remove "${cart[id].name}" from cart?`);
+          if (!ok) return;
+          delete cart[id];
+        } else {
+          cart[id].quantity--;
         }
-      });
+        renderCart();
+      };
     });
 
 
     // ➕ Increase
-    document.querySelectorAll(".increase-qty").forEach(button => {
-      button.addEventListener("click", () => {
-        const id = button.dataset.id;
-        if (cart[id]) {
-          cart[id].quantity++;
-          renderCart();
-        }
-      });
+    document.querySelectorAll(".increase-qty").forEach(btn => {
+      btn.onclick = () => {
+        cart[btn.dataset.id].quantity++;
+        renderCart();
+      };
     });
 
     // ❌ Remove
-    document.querySelectorAll(".remove-item").forEach(button => {
-      button.addEventListener("click", () => {
-        const id = button.dataset.id;
-        delete cart[id];
+    document.querySelectorAll(".remove-item").forEach(btn => {
+      btn.onclick = () => {
+        delete cart[btn.dataset.id];
         renderCart();
-      });
+      };
     });
 
+    // Сохраняем текущее состояние корзины
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 
 document.querySelectorAll('.btn-buy-now').forEach(btn => {
