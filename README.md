@@ -9,9 +9,9 @@ A full-stack bakery website built with Flask (Python) for backend and HTML/CSS/J
 - Deployment on DigitalOcean (Gunicorn + Nginx)
 
 ## Tech Stack
-- Python (Flask), SQLAlchemy
+- Python (Flask)
 - HTML/CSS (Bootstrap), JavaScript
-- SQLite / PostgreSQL
+- SQLAlchemy
 - Deployed on DigitalOcean
 
 ## Installation
@@ -20,3 +20,4 @@ git clone ...
 pip install -r requirements.txt
 export FLASK_ENV=production
 # etc.
+
